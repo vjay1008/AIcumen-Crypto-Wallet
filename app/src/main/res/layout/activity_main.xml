@@ -1,18 +1,216 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/linkedin_login_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#1c5199"
+            android:gravity="center"
+            android:text="sign in using Linkedin"
+            android:textColor="@android:color/white"
+            android:textSize="14sp" />
+
+
+        <!-- image view to show user profile image -->
+        <ImageView
+            android:id="@+id/user_profile_image_view"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp" />
+
+        <!-- text view to show user details -->
+        <TextView
+            android:id="@+id/user_details_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="@color/colorPrimary"
+            android:textSize="15sp" />
+
+        <!-- logout button only visible after successful Sign In -->
+        <Button
+            android:id="@+id/logout_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/colorPrimary"
+            android:text="string/logout"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <!-- Share button only visible after successful Sign In -->
+        <Button
+            android:id="@+id/share_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@color/colorPrimary"
+            android:text="string/share"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <!-- Open Profile Links buttons to open user profile into LinkedIn App only visible after successful Sign In -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/open_my_profile_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:text="string/open_my_profile"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/open_others_profile_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="1"
+                android:background="@color/colorPrimary"
+                android:text="string/open_others_profile"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_wallet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/wallet_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Wallet Details"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/wallet_address_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:text="Wallet Address : "
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/wallet_label"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/wallet_address_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="@android:color/darker_gray"
+                android:text="aldfhkjekkidiDLKJFDL"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/wallet_label"
+                app:layout_constraintStart_toEndOf="@id/wallet_address_label"/>
+
+
+
+
+
+
+
+
+            <TextView
+                android:id="@+id/eth_balance_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:text="Balance(Eth) : "
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/wallet_address_label"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <TextView
+                android:id="@+id/eth_balance_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:text="10.3434 "
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@id/wallet_address_label"
+                app:layout_constraintStart_toEndOf="@id/eth_balance_label"/>
+
+
+            <TextView
+                android:id="@+id/edit_eth_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:text="Send (ETH) : "
+                android:layout_marginTop="30dp"
+                app:layout_constraintTop_toBottomOf="@id/eth_balance_label"
+                app:layout_constraintStart_toStartOf="parent"/>
+
+            <EditText
+                android:id="@+id/edit_eth_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:hint="Enter amount"
+                android:inputType="numberDecimal"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toTopOf="@id/edit_eth_label"
+                app:layout_constraintBottom_toBottomOf="@id/edit_eth_label"
+                app:layout_constraintStart_toEndOf="@id/edit_eth_label"/>
+
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="120dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="100dp"
+                android:textColor="@android:color/white"
+                android:background="@color/blue"
+                android:text="Transfer"
+                app:layout_constraintTop_toBottomOf="@id/eth_balance_value"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
