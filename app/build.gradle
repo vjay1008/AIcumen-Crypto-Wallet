@@ -44,19 +44,7 @@ dependencies {
     implementation 'org.web3j:core:4.1.0-android'
 
     //linkedIn sdk
-    implementation project(path: ':linkedin-sdk-new')
-
-    //picasso
-    implementation 'com.squareup.picasso:picasso:2.71828'
-
-    //
-    //region Networking
-    implementation 'com.squareup.okhttp3:okhttp:3.11.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-scalars:2.4.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.4.0'
+    implementation "com.github.koushikcse:LinkedIn:1.1"
 
 
 }

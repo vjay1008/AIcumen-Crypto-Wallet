@@ -1,2 +1,2 @@
-include ':app', ':linkedin-sdk', 'linkedin-sdk-new'
+include ':app', 'linkedin-sdk-new'
 rootProject.name='BlockChain'
